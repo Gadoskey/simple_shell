@@ -7,19 +7,19 @@
 char **mh_tokenize_user_input(char *input)
 {
 	char *delimiter = " \t\n";
-	char *token = NULL, *tok = NULL;
+	char *token = NULL, *tok1 = NULL;
 	char **command = NULL;
 	int i = 0, n = 0;
 
 
 	if (input == NULL)
 		return (NULL);
-	tok = mh_strdup(input);
-	for (token = strtok(tok, delimiter); token; token = strtok(NULL, delimiter))
+	tok1 = mh_strdup(input);
+	for (token = strtok(tok1, delimiter); token; token = strtok(NULL, delimiter))
 	{
 		n++;
 	}
-	free(tok);
+	free(tok1);
 	command = malloc(sizeof(char *) * (n + 1));
 	if (command == NULL)
 	{

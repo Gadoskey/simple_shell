@@ -1,15 +1,12 @@
-#include "main.h"
-#include <stdio.h>
-#include <string.h>
+#include "mh.h"
 
 /**
- * _strncat - copies a string into another string
+ * mh_strcat - copies a string into another string
  * @dest: The first pointer
- * @n: The integer
  * @src: The second pointer
  * Return: Always 0.
  */
-char *_strncat(char *dest, char *src, int n)
+char *mh_strcat(char *dest, char *src)
 {
 	char *ptr = dest;
 
@@ -17,13 +14,14 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		ptr++;
 	}
-	while (*src != '\0' && n > 0)
+	while (*src != '\0')
 	{
 		*ptr = *src;
 		ptr++;
 		src++;
-		n--;
 	}
 	*ptr = '\0';
 	return (dest);
+
+
 }
