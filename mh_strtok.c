@@ -28,7 +28,7 @@ char *mh_strtok(char *str, const char *delim)
 	{
 		i++;
 	}
-	token = (char*) malloc(i + 1);
+	token = (char *) malloc(i + 1);
 	if (token == NULL)
 	{
 		return (NULL);

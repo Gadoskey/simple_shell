@@ -30,7 +30,7 @@ char *mh_getline(void)
 			buffer_pos = 0;
 		}
 		current_char = buffer[buffer_pos++];
-		if (current_char == '\n'|| current_char == EOF)
+		if (current_char == '\n' || current_char == EOF)
 		{
 			if (line == NULL)
 				return (NULL);
