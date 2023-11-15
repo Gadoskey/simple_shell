@@ -9,16 +9,23 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+#define BUFFER_SIZE 1024
 #define MAX_COMMAND_LENGTH 100
 #define MAX_ARGUMENTS 10
 
 extern char **environ;
 void mh_free_tokens(char **array);
+void mh_free_tokens1(char *array);
+
 /*print functions*/
 
 void mh_prompt(void);
-void mh_print(const char *text);
+void mh_print(char *text);
 void mh_print2(char *text);
+
+/* getline % strtok*/
+char *mh_getline(void);
+char *mh_strtok(char *str, const char *delim);
 
 /* print environment variables*/
 char *mh_getenv(char *input);

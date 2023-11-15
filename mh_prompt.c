@@ -1,6 +1,6 @@
 #include "mh.h"
 /**
- * mh_prompt - * Function to print.
+ * mh_prompt - Function to print.
  */
 void mh_prompt(void)
 {

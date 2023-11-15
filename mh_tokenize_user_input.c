@@ -6,7 +6,7 @@
  */
 char **mh_tokenize_user_input(char *input)
 {
-	char *delimiter = " \t\n";
+	char *delim = " \t\n";
 	char *token = NULL, *tok1 = NULL;
 	char **command = NULL;
 	int i = 0, n = 0;
@@ -15,24 +15,24 @@ char **mh_tokenize_user_input(char *input)
 	if (input == NULL)
 		return (NULL);
 	tok1 = mh_strdup(input);
-	for (token = strtok(tok1, delimiter); token; token = strtok(NULL, delimiter))
+	for (token = strtok(tok1, delim); token; token = strtok(NULL, delim))
 	{
 		n++;
 	}
 	free(tok1);
+	tok1 = NULL;
 	command = malloc(sizeof(char *) * (n + 1));
 	if (command == NULL)
 	{
-		free(input);
 		return (NULL);
 	}
-	token = strtok(input, delimiter);
-	for (; token; token = strtok(NULL, delimiter))
+	token = strtok(input, delim);
+	for (; token; token = strtok(NULL, delim))
 	{
 		command[i] = mh_strdup(token);
 		i++;
 	}
-	free(input);
 	command[i] = NULL;
+	free(input);
 	return (command);
 }
