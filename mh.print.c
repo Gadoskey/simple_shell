@@ -3,7 +3,7 @@
  * mh_print - prints a text
  * @text: The message to be printed.
  */
-void mh_print(char *text)
+void mh_print(const char *text)
 {
-	write(STDOUT_FILENO, text, mh_strlen(text));
+	write(STDOUT_FILENO, text, strlen(text));
 }
